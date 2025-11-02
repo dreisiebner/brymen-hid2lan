@@ -1,0 +1,56 @@
+﻿Brymen-HID2LAN v0.5.0.0
+
+SCPI commands:
+
+*IDN?
+Returns an identification with four fields:
+	Brymen,HID2LAN,2025-11-01,0.5.0.0
+
+The names of the devices are assigned in ascending order according to the sorted serial number:
+	A, B, C etc.
+
+A?
+A? MV
+Returns the main measurement value for the device named ‘A’:
+	5.1546
+
+A?;B?
+Returns the main measurement values for the devices named 'A' and 'B':
+	5.1546;0.004
+	
+A? MV,MU
+Returns the main measurement value and unit for the device named ‘A’:
+	5.1546;V DC
+	
+A? SV
+Returns the second measurement value for the device named ‘A’:
+	0.004
+	
+A? SV,SU
+Returns the second measurement value and unit for the device named ‘A’:
+	0.004;V AC
+	
+A? MV,MU,SV,SU
+Returns the primary and secondary measurements and units for the device named ‘A’:
+	5.1546;V DC;0.004;V AC
+	
+When reading the measurements from the devices, the system waits 1.5 seconds for a response. If there is a timeout or an error, the measurement value ‘-999999’ is returned.
+
+
+Information for Raspberry Pi:
+
+To access USB and HID devices on Raspberry Pi OS (Trixie), a file with the following content can be created:
+	sudo nano /etc/udev/rules.d/99-usb.rules
+	Content:
+		SUBSYSTEM=="usb", GROUP="plugdev", MODE="0660"
+		KERNEL=="hidraw*", ATTRS{busnum}=="1", GROUP="plugdev", MODE="0660"		
+Then restart or unplug the devices and execute the following command:   sudo udevadm control --reload
+
+
+Author:   Peter Dreisiebner
+e-mail:   web@dreisiebner.at
+Website:   https://github.com/dreisiebner/
+
+Compiled with:   PureBasic v6.30
+Website:   https://www.purebasic.com
+

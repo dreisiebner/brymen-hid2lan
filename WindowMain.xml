@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+
+<window id="WindowMain::#eWindowMain" name="WindowMain" text="Brymen-HID-to-LAN v05"
+	minwidth="auto" minheight="260"
+	flags="#PB_Window_SizeGadget | #PB_Window_MaximizeGadget | #PB_Window_MinimizeGadget">
+
+	<panel>
+	
+		<tab text="Setup">
+			<vbox expand="item:1">
+				<hbox>
+					<listicon id="WindowMain::#eGadgetListIconDevice" text="Name"
+						flags="#PB_ListIcon_CheckBoxes | #PB_ListIcon_FullRowSelect | #PB_ListIcon_GridLines">
+					</listicon>
+				</hbox>
+				<hbox expand="item:4">
+					<button id="WindowMain::#eGadgetButtonStart" width="70" text="Start" flags="#PB_Button_Toggle"
+						onevent="WindowMain::EventButtonStart()" />
+					<ipaddress id="WindowMain::#eGadgetIpAddress" width="140" />
+					<string id="WindowMain::#eGadgetStringPort" width="70" />
+					<empty />
+					<button id="WindowMain::#eGadgetButtonRefresh" width="70" text="Refresh"
+						onevent="WindowMain::EventButtonRefresh()" />
+				</hbox>
+			</vbox>
+		</tab>
+		
+		<tab text="Log">
+			<vbox expand="item:1">
+				<hbox>
+					<editor id="WindowMain::#eGadgetEditorLog" />
+				</hbox>
+				<hbox expand="item:4">
+					<button id="WindowMain::#eGadgetButtonTest" width="70" text="Test"
+						onevent="WindowMain::EventButtonTest()" />
+					<button id="WindowMain::#eGadgetButtonClear" width="70" text="Clear"
+						onevent="WindowMain::EventButtonClear()" />
+					<button id="WindowMain::#eGadgetButtonTextWidth" invisible="yes" />
+					<empty />
+					<checkbox id="WindowMain::#eGadgetCheckboxDebug" text="Debug"
+						onevent="WindowMain::EventCheckboxDebug()" />
+				</hbox>
+			</vbox>
+		</tab>
+		
+		<tab text="Help">
+			<editor id="WindowMain::#eGadgetEditorHelp" flags="#PB_Editor_WordWrap" />
+		</tab>
+		
+	</panel>
+</window>

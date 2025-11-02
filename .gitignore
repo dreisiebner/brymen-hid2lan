@@ -1,0 +1,90 @@
+#####################################################
+#  PureBasic OpenSource Projects:                   #
+#  https://github.com/fantaisie-software/purebasic  #
+#####################################################
+
+## ===============
+## PureBasic files
+## ===============
+## Exclude PB project and configuration files from repository to avoid
+## personal data leaks and interferences with Git working directory, since
+## these files differ on each end-user machine and change at every project
+## save, polluting the working directory.
+*.pb.cfg
+*.pbi.cfg
+*.pbp
+project.cfg
+
+## ==================
+## HTML Help Previews
+## ==================
+Documentation/English/HTML
+Documentation/French/HTML
+Documentation/German/HTML
+
+## ===============
+## Misc Work Files
+## ===============
+
+# Temporary/backup or removed files and folders:
+___*
+___*.*
+
+# Links and URLs
+*.lnk
+*.url
+
+# Generated output files
+Build/
+*.patch
+*.diff
+
+## ==================
+## Binary Executables
+## ==================
+*.app
+*.dll
+*.dylib
+*.exe
+*.out
+*.so
+
+## =====================
+## Ignore Specific Files
+## =====================
+/PureBasicIDE/PureBasic.asm
+
+# ==============================================================================
+#                             COMMON IGNORE PATTERNS
+# ==============================================================================
+# Common ignore patterns for Windows, Linux and macOS.
+
+$RECYCLE.BIN/
+*.stackdump
+*~
+._*
+.AppleDouble
+.directory
+.DS_Store
+.fuse_hidden*
+.LSOverride
+.nfs*
+.Trash-*
+[Dd]esktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+Icon
+Thumbs.db
+Thumbs.db:encryptable
+
+# EOF #
+/PureBasicDebugger/purebasic.c
+/PureBasicDebugger/PureBasic.asm
+/Documentation/Examples/3D/Ogre.log
+/DialogManager/purebasic.asm
+/Documentation/Examples/Sources/purebasic.asm
+/PureBasicIDE/purebasic.c
+/Documentation/SpiderBasic/Examples/SpiderBasic_Compilation0.html
+/Documentation/SpiderBasic/Examples/spiderbasic.js
+/Documentation/SpiderBasic/Examples/SpiderBasic_Compilation1.html
+/Documentation/HowToPatchToGIT.txt
